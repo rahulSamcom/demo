@@ -28,6 +28,7 @@
 		DBC31AF42A30B33B009AAAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBC31AF72A30B33B009AAAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBC31AF92A30B33B009AAAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC31B002A30B947009AAAAA /* Firebase_Demo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Firebase_Demo.xctestplan; path = ../Firebase_Demo.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +49,6 @@
 				AE515DBB5C22366D092E8D78 /* Pods-Firebase_Demo.debug.xcconfig */,
 				221BBB33595DCD3ED571C534 /* Pods-Firebase_Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -63,6 +63,7 @@
 		DBC31ADF2A30B339009AAAAA = {
 			isa = PBXGroup;
 			children = (
+				DBC31B002A30B947009AAAAA /* Firebase_Demo.xctestplan */,
 				DBC31AEA2A30B339009AAAAA /* Firebase_Demo */,
 				DBC31AE92A30B339009AAAAA /* Products */,
 				28EA1E9982B92EBEFFD893E7 /* Pods */,
