@@ -25,7 +25,6 @@ jobs:
 
       - name: Install project dependencies
         run: |
-          cd path/to/your/project
           pod install
 
       - name: Build and test
