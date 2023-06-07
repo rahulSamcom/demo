@@ -20,13 +20,6 @@ jobs:
           enable-cache: true
           version: latest
 
-      - name: Install CocoaPods
-        run: gem install cocoapods
-
-      - name: Install project dependencies
-        run: |
-          pod install
-
       - name: Build and test
         run: |
           xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" CODE_SIGNING_ALLOWED=NO
