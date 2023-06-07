@@ -29,4 +29,4 @@ jobs:
 
       - name: Build and test
         run: |
-          xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" CODE_SIGNING_ALLOWED=NO
