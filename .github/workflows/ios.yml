@@ -29,5 +29,4 @@ jobs:
 
       - name: Build and test
         run: |
-          cd path/to/your/project
           xcodebuild clean build test -workspace YourProject.xcworkspace -scheme YourScheme -sdk iphonesimulator -destination "platform=iOS Simulator,OS=15.0,name=iPhone 12" CODE_SIGNING_REQUIRED=NO
