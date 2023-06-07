@@ -7,7 +7,7 @@ on:
 
 env:
   SCHEME: "Firebase_Demo"  # Replace with your Xcode scheme
-  DESTINATION: "platform=iOS Simulator,name=Any iOS Device,OS=latest"
+  DESTINATION: "platform=iOS Simulator,name=iPad Pro (12.9-inch) (6th generation),iOS Device,OS=16.4"
 
 jobs:
   build:
