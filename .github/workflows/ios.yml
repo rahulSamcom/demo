@@ -29,4 +29,4 @@ jobs:
 
       - name: Build and test
         run: |
-          xcodebuild clean build test -workspace Firebase_Demo.xcworkspace -scheme Firebase_Demo -sdk iphonesimulator -destination "platform=iOS Simulator,OS=16.4,name=Any iOS Device" CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean build analyze test -scheme RenetikEvent -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' 
