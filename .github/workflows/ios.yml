@@ -24,11 +24,13 @@ jobs:
           enable-cache: true
           version: latest
 
-    - name: Install dependencies
+    - name: Install CocoaPods
+      run: gem install cocoapods
+
+    - name: Install project dependencies
       run: |
-        gem install bundler
-        bundle install
-        bundle exec pod install
+          pod install
+
 
     - name: Build and test
       run: |
