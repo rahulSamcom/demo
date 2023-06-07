@@ -1,5 +1,4 @@
 name: iOS CI
-
 on:
   push:
     branches:
@@ -29,4 +28,4 @@ jobs:
 
       - name: Build and test
         run: |
-          xcodebuild clean build test -workspace Firebase_Demo.xcworkspace -scheme Firebase_Demo -sdk iphonesimulator -destination "platform=iOS Simulator,OS=15.0,name=iPhone 12" CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean build test -workspace Firebase_Demo.xcworkspace -scheme Firebase_Demo -sdk iphonesimulator -destination "platform=iOS Simulator,OS=11.0,name=iPhone 12" CODE_SIGNING_REQUIRED=NO
