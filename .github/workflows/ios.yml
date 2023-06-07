@@ -18,5 +18,4 @@ jobs:
         xcode-version: latest-stable
         
     - name: Build and test
-      run: xcodebuild archive -scheme "Firebase_Demo" -sdk iphoneos -destination generic/platform=iOS -archivePath ./Firebase_Demo.xcarchive
-          
+      run: xcodebuild build -scheme "Firebase_Demo" -sdk iphoneos -destination generic/platform=iOS
