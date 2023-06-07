@@ -29,4 +29,4 @@ jobs:
 
       - name: Build and test
         run: |
-          xcodebuild clean build analyze test -scheme "Firebase_Demo" -sdk iphonesimulator -destination 'platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device'
+          xcodebuild clean build analyze test -scheme "Firebase_Demo" -sdk iphonesimulator -destination 'platform=iOS, id=dvtdevice-DVTiPhonePlaceholder-iphoneos=placeholder, name=Any iOS Device'
