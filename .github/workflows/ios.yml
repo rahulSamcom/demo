@@ -1,25 +1,40 @@
-name: iOS CI
+
+name: iOS Test Build
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  SCHEME: "Firebase_Demo"  # Replace with your Xcode scheme
+  DESTINATION: "platform=iOS Simulator,name=Any iOS Device,OS=latest"
 
 jobs:
   build:
-    name: Build and Test
-    runs-on: macOS-latest
+
+    runs-on: macos-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Xcode
-        uses: nightstory/setup-xcodegen@v1
-        with:
+    
+    - name: Checkout code
+      uses: actions/checkout@v2
+	  
+    - name: Set up Xcode
+      uses: nightstory/setup-xcodegen@v1
+      with:
           enable-cache: true
           version: latest
 
-      - name: Build and test
-        run: |
-          xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" CODE_SIGNING_ALLOWED=NO
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+        bundle exec pod install
+
+    - name: Build and test
+      run: |
+        xcodebuild clean build -workspace Firebase_Demo.xcworkspace -scheme $SCHEME -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
