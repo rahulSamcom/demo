@@ -7,14 +7,26 @@ on:
 
 jobs:
   build:
-
+    name: Build and Test
     runs-on: macOS-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Force Xcode 11
-      run: sudo xcode-select -switch /Applications/Xcode_11.3.app
-    - name: Run tests
-      run: xcodebuild clean test -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
-    - name: Build App
-      run: xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        uses: nightstory/setup-xcodegen@v1
+        with:
+          enable-cache: true
+          version: latest
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Install project dependencies
+        run: |
+          pod install
+
+      - name: Build and test
+        run: |
+          xcodebuild -project "Firebase_Demo.xcodeproj" -scheme "Firebase_Demo" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
