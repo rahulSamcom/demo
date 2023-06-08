@@ -1,31 +1,29 @@
-name: Firebase App Distribution
-
+name: iOS CI
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
+    name: Build and Test
     runs-on: macOS-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Set up Xcode
-        uses: actions/setup-xcode@v2
+        uses: nightstory/setup-xcodegen@v1
         with:
-          xcode-version: '12.x'  # Specify the desired Xcode version here
-      
-      - name: Install Firebase CLI
-        run: curl -sL https://firebase.tools | bash
-      
+          enable-cache: true
+          version: latest
+
       - name: Install CocoaPods
         run: gem install cocoapods
-      
-      - name: Install dependencies
-        run: pod install
-      
+
+      - name: Install project dependencies
+        run: |
+          pod install
+
       - name: Build and Archive
         run: xcodebuild archive -workspace Firebase_Demo.xcworkspace -scheme Firebase_Demo -archivePath Firebase_Demo.xcarchive
